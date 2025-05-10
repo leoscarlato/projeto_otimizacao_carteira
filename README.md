@@ -49,9 +49,43 @@ Este projeto busca identificar a combinação ótima de 25 ativos dentre um univ
     
     Para isso, foi utilizada a biblioteca `concurrent.futures`, especificamente o módulo `ProcessPoolExecutor`, que permite a execução de funções em paralelo utilizando múltiplos processos.
 
+    Neste projeto em específico, o paralelismo se encontra 
+
 6. **Resultado final**
 
-    Ao fim, o script exibe o Sharpe Ratio máximo encontrado e a alocação dos 25 ativos correspondentes com seus respectivos pesos.
+    Ao fim, o script exibe o Sharpe Ratio máximo encontrado e a alocação dos 25 ativos correspondentes com seus respectivos pesos, ordenados de forma decrescente.
+
+    A saída abaixo é um exemplo do resultado obtido ao executar o código:
+
+```
+    Best Sharpe Ratio: 3.0202
+    Assets and Weights (sorted):
+    CSCO: 0.0998
+    WMT: 0.0931
+    CRM: 0.0908
+    DIS: 0.0883
+    V: 0.0758
+    MCD: 0.0714
+    AAPL: 0.0670
+    IBM: 0.0556
+    AXP: 0.0529
+    NVDA: 0.0468
+    AMZN: 0.0440
+    CVX: 0.0360
+    HON: 0.0320
+    MSFT: 0.0276
+    TRV: 0.0252
+    SHW: 0.0173
+    PG: 0.0158
+    GS: 0.0155
+    MRK: 0.0122
+    HD: 0.0122
+    JPM: 0.0096
+    CAT: 0.0086
+    KO: 0.0013
+    NKE: 0.0006
+    VZ: 0.0005
+```
 
 ## Estrutura do Projeto
 ```
@@ -69,25 +103,28 @@ Este projeto busca identificar a combinação ótima de 25 ativos dentre um univ
 - `simulate/`: contém o script responsável pela simulação de carteiras, incluindo a geração de combinações de ativos e a execução das simulações para verificar o desempenho de cada carteira.
 - `main.py`: script principal que executa o fluxo do projeto, chamando as funções necessárias para a coleta de dados, processamento, simulação com paralelização e exibição dos resultados.
 
-## Requisitos
-
-Para rodar o programa, primeiramente é necessário ter o Python instalado em sua máquina, preferencialmente a versão 3.11.9 ou superior. Além disso, é necessário instalar algumas bibliotecas listadas como dependências no arquivo `requirements.txt`. Para isso, você pode utilizar o gerenciador de pacotes `pip` da seguinte forma:
-
+## Como Executar
+1. Certifique-se de ter o Python 3.11 ou versões superiores instalado em sua máquina.
+2. Clone este repositório em sua máquina local.
+```bash
+git clone https://github.com/leoscarlato/projeto_otimizacao_carteira.git
+```
+3. Crie um ambiente virtual e ative-o:
+```bash
+python -m venv env
+env/Scripts/activate
+```
+4. Instale as dependências necessárias:
 ```bash
 pip install -r requirements.txt
 ```
-
-## Execução
-Para executar o programa, primeiramente é necessário obter os dados dos ativos. Para isso, após ter instalado todas as dependências, execute o seguinte comando em seu terminal:
-
+5. Para fazer download dos dados, execute o script `data_fetcher.py`:
 ```bash
 python data_loader/data_fetcher.py
 ```
-
-Com isso, o arquivo `acoes.csv` será gerado na pasta `data_loader/`, contendo os preços ajustados dos ativos do índice Dow Jones entre as datas 01/08/2024 e 31/12/2024.
-Após esta etapa, você já pode executar o script principal do projeto, que irá realizar a simulação e exibir os resultados, por meio do seguinte comando:
-
+6. Com os dados baixados e as dependências instaladas, execute o script principal:
 ```bash
 python main.py
 ```
+7. Após a execução, o script exibirá os resultados dentro do terminal.
 

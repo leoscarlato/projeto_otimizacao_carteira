@@ -1,7 +1,7 @@
 # Otimização de Carteira de Investimentos - 2º Semestre de 2024
 
 ## Descrição
-Este projeto busca identificar a combinação ótima de 25 ativos dentre um universo de 30 do índice Dow Jones, com o objetivo de maximizar o Sharpe Ratio e, consequentemente, o retorno ajustado ao risco. A abordagem utilizada envolve a geração de combinações de ativos e a simulação de diferentes alocações de pesos, respeitando restrições específicas.
+Este projeto busca identificar a combinação ótima de 25 ativos dentre um universo de 30 do índice Dow Jones, com o objetivo de maximizar o Sharpe Ratio e, consequentemente, o retorno ajustado ao risco. A abordagem utilizada envolve a geração de combinações de ativos e a simulação de diferentes alocações de pesos, respeitando certas restrições.
 
 ## Objetivos
 - Encontrar a combinação ótima de 25 ativos dentre um universo de 30.

@@ -3,6 +3,16 @@ from utils import generate_random_weights, calculate_portfolio_return, calculate
 from utils import sharpe_ratio
 
 def simulate_combination(assets, daily_returns):
+    """
+    Simula a combinação de ativos e calcula o Sharpe Ratio.
+    A função chama as funções auxiliares para:
+    - Gerar pesos aleatórios para o portfólio
+    - Calcular o retorno esperado do portfólio
+    - Calcular a volatilidade do portfólio
+    - Calcular o Sharpe Ratio
+    A função retorna o melhor resultado encontrado, ou seja, o maior Sharpe Ratio e os ativos e pesos correspondentes.
+    No fluxo principal no arquivo main.py, a função é chamada em paralelo para todas as combinações de 25 ativos.
+    """
     mean_returns = daily_returns[list(assets)].mean()
     cov_matrix = daily_returns[list(assets)].cov()
     best_sharpe = -np.inf

@@ -1,7 +1,7 @@
 # Otimização de Carteira de Investimentos - 2º Semestre de 2024
 
 ## Descrição
-Este projeto busca identificar a combinação ótima de 25 ativos dentre um universo de 30 do índice Dow Jones, com o objetivo de maximizar o Sharpe Ratio. A alocação de pesos é avaliada por meio de simulações puras, respeitando restrições de longo prazo (long-only) e peso máximo por ativo
+Este projeto busca identificar a combinação ótima de 25 ativos dentre um universo de 30 do índice Dow Jones, com o objetivo de maximizar o Sharpe Ratio e, consequentemente, o retorno ajustado ao risco. A abordagem utilizada envolve a geração de combinações de ativos e a simulação de diferentes alocações de pesos, respeitando restrições específicas.
 
 ## Objetivos
 - Encontrar a combinação ótima de 25 ativos dentre um universo de 30.
@@ -126,5 +126,5 @@ python data_loader/data_fetcher.py
 ```bash
 python main.py
 ```
-7. Após a execução, o script exibirá os resultados dentro do terminal.
+7. Após a execução, o script exibirá os resultados dentro do 
 

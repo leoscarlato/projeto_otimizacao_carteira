@@ -14,16 +14,17 @@ Este projeto busca identificar a combinação ótima de 25 ativos dentre um univ
 ├── data_loader/
 │   └── data_fetcher.py
 │   └── data_loader.py
-│   └── acoes.csv  
 ├── utils.py              
 ├── simulate/
 │   └── simulate.py    
-└── main.py               
+├── main.py  
+└── requirements.txt                  
 ```
 - `data_loader/`: contém os scripts responsáveis pela coleta e processamento dos dados, além do arquivo CSV com os preços ajustados dos ativos.
 - `utils.py`: contém funções auxiliares utilizadas em todo o projeto, como o cálculo do retorno, volatilidade, Sharpe Ratio, além da geração de pesos aleatórios.
 - `simulate/`: contém o script responsável pela simulação de carteiras, incluindo a geração de combinações de ativos e a execução das simulações para verificar o desempenho de cada carteira.
 - `main.py`: script principal que executa o fluxo do projeto, chamando as funções necessárias para a coleta de dados, processamento, simulação com paralelização e exibição dos resultados.
+- `requirements.txt`: lista de dependências necessárias para o projeto.
 
 
 ## Metodologia
@@ -66,7 +67,8 @@ Este projeto busca identificar a combinação ótima de 25 ativos dentre um univ
     
     Para isso, foi utilizada a biblioteca `concurrent.futures`, especificamente o módulo `ProcessPoolExecutor`, que permite a execução de funções em paralelo utilizando múltiplos processos.
 
-    Neste projeto em específico, o paralelismo se encontra 
+    Para este projeto, o paralelismo foi aplicado entre as combinações de ativos, isto é, cada combinação de 25 ativos é processada em um processo separado. Com essa abordagem, a carga de trabalho é distribuída uniformemente entre os processos, permitindo que cada um execute sua parte da tarefa de forma independente e simultânea.
+    
 
 6. **Resultado final**
 
@@ -103,6 +105,14 @@ Este projeto busca identificar a combinação ótima de 25 ativos dentre um univ
     NKE: 0.0006
     VZ: 0.0005
 ```
+
+### Comparativo de Tempo de Execução
+Por fins de comparação, foram realizados testes de tempo de execução com e sem paralelização. Para uma mesma máquina, cujo processador contém 6 núcleos, os resultados foram os seguintes:
+- Com paralelização: cerca de **40 minutos**.
+- Sem paralelização (sequencial): cerca de **4 horas e 35 minutos**.
+
+Dessa forma, a utilização de paralelização proporcionou uma redução significativa no tempo de execução, tornando o processo mais eficiente e viável.
+
 ## Como Executar
 1. Certifique-se de ter o Python 3.11 ou versões superiores instalado em sua máquina.
 2. Clone este repositório em sua máquina local.
@@ -118,7 +128,7 @@ env/Scripts/activate
 ```bash
 pip install -r requirements.txt
 ```
-5. Para fazer download dos dados, execute o script `data_fetcher.py`:
+5. Faça download dos dados, executando o script `data_fetcher.py`:
 ```bash
 python data_loader/data_fetcher.py
 ```
@@ -126,5 +136,5 @@ python data_loader/data_fetcher.py
 ```bash
 python main.py
 ```
-7. Após a execução, o script exibirá os resultados dentro do 
+7. Após a execução, o script exibirá os resultados dentro do terminal. 
 

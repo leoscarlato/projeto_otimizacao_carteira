@@ -9,6 +9,23 @@ Este projeto busca identificar a combinação ótima de 25 ativos dentre um univ
 - Utilizar diferentes simulações para atribuir pesos a cada ativo, garantindo que a soma desses seja igual a 1 e que nenhum ativo tenha peso negativo ou superior a 0,2.
 - Avaliar o desempenho da carteira com o maior Sharpe Ratio.
 
+## Estrutura do Projeto
+```
+├── data_loader/
+│   └── data_fetcher.py
+│   └── data_loader.py
+│   └── acoes.csv  
+├── utils.py              
+├── simulate/
+│   └── simulate.py    
+└── main.py               
+```
+- `data_loader/`: contém os scripts responsáveis pela coleta e processamento dos dados, além do arquivo CSV com os preços ajustados dos ativos.
+- `utils.py`: contém funções auxiliares utilizadas em todo o projeto, como o cálculo do retorno, volatilidade, Sharpe Ratio, além da geração de pesos aleatórios.
+- `simulate/`: contém o script responsável pela simulação de carteiras, incluindo a geração de combinações de ativos e a execução das simulações para verificar o desempenho de cada carteira.
+- `main.py`: script principal que executa o fluxo do projeto, chamando as funções necessárias para a coleta de dados, processamento, simulação com paralelização e exibição dos resultados.
+
+
 ## Metodologia
 1. **Coleta de Dados**
 
@@ -86,23 +103,6 @@ Este projeto busca identificar a combinação ótima de 25 ativos dentre um univ
     NKE: 0.0006
     VZ: 0.0005
 ```
-
-## Estrutura do Projeto
-```
-├── data_loader/
-│   └── data_fetcher.py
-│   └── data_loader.py
-│   └── acoes.csv  
-├── utils.py              
-├── simulate/
-│   └── simulate.py    
-└── main.py               
-```
-- `data_loader/`: contém os scripts responsáveis pela coleta e processamento dos dados, além do arquivo CSV com os preços ajustados dos ativos.
-- `utils.py`: contém funções auxiliares utilizadas em todo o projeto, como o cálculo do retorno, volatilidade, Sharpe Ratio, além da geração de pesos aleatórios.
-- `simulate/`: contém o script responsável pela simulação de carteiras, incluindo a geração de combinações de ativos e a execução das simulações para verificar o desempenho de cada carteira.
-- `main.py`: script principal que executa o fluxo do projeto, chamando as funções necessárias para a coleta de dados, processamento, simulação com paralelização e exibição dos resultados.
-
 ## Como Executar
 1. Certifique-se de ter o Python 3.11 ou versões superiores instalado em sua máquina.
 2. Clone este repositório em sua máquina local.

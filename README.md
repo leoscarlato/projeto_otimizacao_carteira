@@ -48,3 +48,46 @@ Este projeto busca identificar a combinação ótima de 25 ativos dentre um univ
     Por se tratar de uma tarefa computacionalmente mais demandante, a execução do código pode levar um tempo considerável, especialmente ao lidar com um grande número de combinações e simulações. Assim, a fim de otimizar o tempo de execução, o código foi estruturado de forma a permitir a execução em paralelo, técnica que possibilita a execução simultânea de múltiplas tarefas, aproveitando melhor os recursos computacionais disponíveis. 
     
     Para isso, foi utilizada a biblioteca `concurrent.futures`, especificamente o módulo `ProcessPoolExecutor`, que permite a execução de funções em paralelo utilizando múltiplos processos.
+
+6. **Resultado final**
+
+    Ao fim, o script exibe o Sharpe Ratio máximo encontrado e a alocação dos 25 ativos correspondentes com seus respectivos pesos.
+
+## Estrutura do Projeto
+```
+├── data_loader/
+│   └── data_fetcher.py
+│   └── data_loader.py
+│   └── acoes.csv  
+├── utils.py              
+├── simulate/
+│   └── simulate.py    
+└── main.py               
+```
+- `data_loader/`: contém os scripts responsáveis pela coleta e processamento dos dados, além do arquivo CSV com os preços ajustados dos ativos.
+- `utils.py`: contém funções auxiliares utilizadas em todo o projeto, como o cálculo do retorno, volatilidade, Sharpe Ratio, além da geração de pesos aleatórios.
+- `simulate/`: contém o script responsável pela simulação de carteiras, incluindo a geração de combinações de ativos e a execução das simulações para verificar o desempenho de cada carteira.
+- `main.py`: script principal que executa o fluxo do projeto, chamando as funções necessárias para a coleta de dados, processamento, simulação com paralelização e exibição dos resultados.
+
+## Requisitos
+
+Para rodar o programa, primeiramente é necessário ter o Python instalado em sua máquina, preferencialmente a versão 3.11.9 ou superior. Além disso, é necessário instalar algumas bibliotecas listadas como dependências no arquivo `requirements.txt`. Para isso, você pode utilizar o gerenciador de pacotes `pip` da seguinte forma:
+
+```bash
+pip install -r requirements.txt
+```
+
+## Execução
+Para executar o programa, primeiramente é necessário obter os dados dos ativos. Para isso, após ter instalado todas as dependências, execute o seguinte comando em seu terminal:
+
+```bash
+python data_loader/data_fetcher.py
+```
+
+Com isso, o arquivo `acoes.csv` será gerado na pasta `data_loader/`, contendo os preços ajustados dos ativos do índice Dow Jones entre as datas 01/08/2024 e 31/12/2024.
+Após esta etapa, você já pode executar o script principal do projeto, que irá realizar a simulação e exibir os resultados, por meio do seguinte comando:
+
+```bash
+python main.py
+```
+

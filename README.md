@@ -76,7 +76,7 @@ Este projeto busca identificar a combinação ótima de 25 ativos dentre um univ
 
     A saída abaixo é um exemplo do resultado obtido ao executar o código:
 
-```
+    ```
     Best Sharpe Ratio: 2.7063
     Portfolio Volatility: 0.1408
     Assets and Weights (sorted):
@@ -105,7 +105,7 @@ Este projeto busca identificar a combinação ótima de 25 ativos dentre um univ
     CAT: 0.0022
     JPM: 0.0018
     JNJ: 0.0016
-```
+    ```
 
 ### Comparativo de Tempo de Execução
 Por fins de comparação, foram realizados testes de tempo de execução com e sem paralelização. Para uma mesma máquina, cujo processador contém 6 núcleos, os resultados foram os seguintes:

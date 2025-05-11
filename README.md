@@ -72,7 +72,7 @@ Este projeto busca identificar a combinação ótima de 25 ativos dentre um univ
 
 6. **Resultado final**
 
-    Ao fim, o script exibe o Sharpe Ratio máximo encontrado e a alocação dos 25 ativos correspondentes com seus respectivos pesos, ordenados de forma decrescente.
+    Ao fim, o script exibe o Sharpe Ratio máximo encontrado, além da volatilidade da carteira e a alocação dos 25 ativos correspondentes com seus respectivos pesos, ordenados de forma decrescente.
 
     A saída abaixo é um exemplo do resultado obtido ao executar o código:
 

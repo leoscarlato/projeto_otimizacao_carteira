@@ -77,33 +77,34 @@ Este projeto busca identificar a combinação ótima de 25 ativos dentre um univ
     A saída abaixo é um exemplo do resultado obtido ao executar o código:
 
 ```
-    Best Sharpe Ratio: 3.0202
+    Best Sharpe Ratio: 2.7063
+    Portfolio Volatility: 0.1408
     Assets and Weights (sorted):
-    CSCO: 0.0998
-    WMT: 0.0931
-    CRM: 0.0908
-    DIS: 0.0883
-    V: 0.0758
-    MCD: 0.0714
-    AAPL: 0.0670
-    IBM: 0.0556
-    AXP: 0.0529
-    NVDA: 0.0468
-    AMZN: 0.0440
-    CVX: 0.0360
-    HON: 0.0320
-    MSFT: 0.0276
-    TRV: 0.0252
-    SHW: 0.0173
-    PG: 0.0158
-    GS: 0.0155
-    MRK: 0.0122
-    HD: 0.0122
-    JPM: 0.0096
-    CAT: 0.0086
-    KO: 0.0013
-    NKE: 0.0006
-    VZ: 0.0005
+    WMT: 0.0916
+    IBM: 0.0903
+    NVDA: 0.0764
+    V: 0.0762
+    CRM: 0.0749
+    DIS: 0.0739
+    AXP: 0.0616
+    MCD: 0.0506
+    AAPL: 0.0490
+    AMZN: 0.0466
+    TRV: 0.0440
+    CSCO: 0.0420
+    MSFT: 0.0372
+    BA: 0.0323
+    PG: 0.0295
+    GS: 0.0287
+    HD: 0.0278
+    HON: 0.0238
+    MMM: 0.0197
+    VZ: 0.0117
+    CVX: 0.0035
+    UNH: 0.0029
+    CAT: 0.0022
+    JPM: 0.0018
+    JNJ: 0.0016
 ```
 
 ### Comparativo de Tempo de Execução

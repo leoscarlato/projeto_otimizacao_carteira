@@ -1,10 +1,11 @@
 import numpy as np
 
-def sharpe_ratio(portfolio_return, risk_free, portfolio_vol):
+def sharpe_ratio(port_return, port_volatility):
     """
-    Calcula o Sharpe Ratio de um portfólio, isto é, a relação entre o retorno do portfólio e o risco assumido.
+    Score de retorno sobre volatilidade (r/σ), para ranquear carteiras.
+    Se quiser o Sharpe clássico, use (r - rf)/σ externamente.
     """
-    return (portfolio_return - risk_free) / portfolio_vol
+    return port_return / port_volatility
 
 def generate_random_weights(n):
     """

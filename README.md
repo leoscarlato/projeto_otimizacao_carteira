@@ -76,35 +76,37 @@ Este projeto busca identificar a combinação ótima de 25 ativos dentre um univ
 
     A saída abaixo é um exemplo do resultado obtido ao executar o código:
 
-```
-    Best Sharpe Ratio: 3.0202
+    ```
+    Best Sharpe Ratio: 3.0656
+    Portfolio Volatility: 0.1194
+    Portfolio Return: 0.3661
     Assets and Weights (sorted):
-    CSCO: 0.0998
-    WMT: 0.0931
-    CRM: 0.0908
-    DIS: 0.0883
-    V: 0.0758
-    MCD: 0.0714
-    AAPL: 0.0670
-    IBM: 0.0556
-    AXP: 0.0529
-    NVDA: 0.0468
-    AMZN: 0.0440
-    CVX: 0.0360
-    HON: 0.0320
-    MSFT: 0.0276
-    TRV: 0.0252
-    SHW: 0.0173
-    PG: 0.0158
-    GS: 0.0155
-    MRK: 0.0122
-    HD: 0.0122
-    JPM: 0.0096
-    CAT: 0.0086
-    KO: 0.0013
-    NKE: 0.0006
-    VZ: 0.0005
-```
+    WMT: 0.0969
+    AAPL: 0.0923
+    CRM: 0.0907
+    DIS: 0.0905
+    CSCO: 0.0847
+    AMZN: 0.0691
+    VZ: 0.0582
+    HD: 0.0548
+    IBM: 0.0546
+    V: 0.0480
+    JNJ: 0.0473
+    MCD: 0.0371
+    MSFT: 0.0336
+    CAT: 0.0209
+    HON: 0.0202
+    CVX: 0.0197
+    PG: 0.0193
+    JPM: 0.0178
+    MRK: 0.0131
+    TRV: 0.0080
+    KO: 0.0071
+    GS: 0.0065
+    SHW: 0.0052
+    NKE: 0.0035
+    MMM: 0.0010
+    ```
 
 ### Comparativo de Tempo de Execução
 Por fins de comparação, foram realizados testes de tempo de execução com e sem paralelização. Para uma mesma máquina, cujo processador contém 6 núcleos, os resultados foram os seguintes:

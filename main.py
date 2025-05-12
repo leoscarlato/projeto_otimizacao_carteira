@@ -23,6 +23,8 @@ if __name__ == "__main__":
                 overall_best_result = result
 
     print(f"Best Sharpe Ratio: {overall_best_result['sharpe']:.4f}")
+    print(f"Portfolio Volatility: {overall_best_result['volatility']:.4f}")
+    print(f"Portfolio Return: {overall_best_result['return']:.4f}")
     print("Assets and Weights (sorted):")
     for asset, weight in overall_best_result['assets']:
         print(f"{asset}: {weight:.4f}")

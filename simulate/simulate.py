@@ -14,19 +14,25 @@ def simulate_combination(assets, daily_returns):
     No fluxo principal no arquivo main.py, a função é chamada em paralelo para todas as combinações de 25 ativos.
     """
     mean_returns = daily_returns[list(assets)].mean()
-    cov_matrix = daily_returns[list(assets)].cov()
-    best_sharpe = -np.inf
+    cov_matrix   = daily_returns[list(assets)].cov()
+
+    best_score  = -np.inf
     best_result = {}
 
     for _ in range(1000):
-        weights = generate_random_weights(25)
+        weights     = generate_random_weights(25)
         port_return = calculate_portfolio_return(weights, mean_returns)
-        port_vol = calculate_portfolio_volatility(weights, cov_matrix)
-        sr = sharpe_ratio(port_return, 0.02, port_vol)
+        port_vol    = calculate_portfolio_volatility(weights, cov_matrix)
+        score       = sharpe_ratio(port_return, port_vol)
 
-        if sr > best_sharpe:
-            best_sharpe = sr
+        if score > best_score:
+            best_score = score
             sorted_assets = sorted(zip(assets, weights), key=lambda x: x[1], reverse=True)
-            best_result = {'sharpe': sr, 'assets': sorted_assets}
+            best_result = {
+                'return'     : port_return,
+                'volatility' : port_vol,
+                'sharpe'     : score,
+                'assets'     : sorted_assets
+            }
 
     return best_result

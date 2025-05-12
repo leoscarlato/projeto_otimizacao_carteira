@@ -49,9 +49,9 @@ Este projeto busca identificar a combinação ótima de 25 ativos dentre um univ
 4. **Simulação de Carteiras**
 
     Para cada combinação de 25 ativos:
-    - Calcula-se o vetor de retornos médios e a matriz de covariância anualizada (Σ_dia × 252).
+    - Calcula-se o vetor de retornos médios e a matriz de covariância anualizada (Σ_dia × 252 (quantidade de dias úteis no ano)).
 
-    - Executam-se 1.000 iterações de geração de pesos via generate_random_weights(n), assegurando soma = 1 e peso ≤ 20%.
+    - Executam-se 1.000 iterações de geração de pesos via `generate_random_weights(n)`, assegurando soma = 1 e peso ≤ 20%.
 
     - Para cada vetor de pesos:
 
@@ -72,7 +72,7 @@ Este projeto busca identificar a combinação ótima de 25 ativos dentre um univ
 
 6. **Resultado final**
 
-    Ao fim, o script exibe o Sharpe Ratio máximo encontrado e a alocação dos 25 ativos correspondentes com seus respectivos pesos, ordenados de forma decrescente.
+    Ao fim, o script exibe o Sharpe Ratio máximo encontrado, além da volatilidade da carteira e a alocação dos 25 ativos correspondentes com seus respectivos pesos, ordenados de forma decrescente.
 
     A saída abaixo é um exemplo do resultado obtido ao executar o código:
 

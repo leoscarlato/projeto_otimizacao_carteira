@@ -140,3 +140,8 @@ python main.py
 ```
 7. Após a execução, o script exibirá os resultados dentro do terminal. 
 
+### ⚠️ Importante
+Para a realização deste projeto, foram utilizadas ferramentas de inteligência artificial como ChatGPT e Github Copilot para a realização das seguintes tarefas:
+- Correção de código
+- Auxílio no entendimento conceitual por trás do projeto
+- Validação de implementações de features
